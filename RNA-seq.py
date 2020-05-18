@@ -45,7 +45,6 @@ for i in fasta:
     saida_bowtie = os.path.join(output, prefix+'.sam')
     #print('saida_bowtie:', saida_bowtie)
     teste = bowtie(1, Path(base_bowtie).resolve(), i, stdout=saida_bowtie)
- #   teste.result()
 
 teste.result()
 
