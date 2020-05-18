@@ -1,1 +1,1 @@
-# Beast1
+# Workflow científico  RNA-seq
