@@ -50,8 +50,6 @@ wait_results = [i.result() for i in saida]
 # Parâmetros DEseq
 exc_dseq2= sys.argv[5]
 
-count = list(output.glob('*.counts'))
-
 saida_DEseq = os.path.join(output, 'teste.deseq')
 teste = DEseq(Path(exc_dseq2).resolve(), output, stdout=saida_DEseq)
 teste.result()
