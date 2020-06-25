@@ -1,7 +1,7 @@
 sampleName,fileName,condition
-tissue control 1,SRR5445794.fastq.counts,control
-tissue control 2,SRR5445795.fastq.counts,control
-tissue control 3,SRR5445796.fastq.counts,control
-tissue wntup 1,SRR5445797.fastq.counts,wntup
-tissue wntup 2,SRR5445798.fastq.counts,wntup
-tissue wntup 3,SRR5445799.fastq.counts,wntup
+tissue control 1,SRR5445794.fastq,control
+tissue control 2,SRR5445795.fastq,control
+tissue control 3,SRR5445796.fastq,control
+tissue wntup 1,SRR5445797.fastq,wntup
+tissue wntup 2,SRR5445798.fastq,wntup
+tissue wntup 3,SRR5445799.fastq,wntup
