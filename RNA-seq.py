@@ -15,7 +15,7 @@ def bowtie(p, baseGenomica, inputs, stdout=None):
 def htSeq_count(saida, gtf, stdout=None):
     return 'htseq-count --stranded reverse --type=exon --idattr=gene_id --mode=union  {0} {1}'.format(saida, gtf)
 
-# Cleaning head lines of counts files obtained with htseq-count (This activity is no longer necessary)
+# Cleaning head lines of counts files obtained with htseq-count
 # @bahs_app
 # def grep(file, stdout):
 #     return 'grep -vwE "processed" {} > {}'.format(file, stdout)
