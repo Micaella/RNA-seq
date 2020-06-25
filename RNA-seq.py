@@ -15,6 +15,11 @@ def bowtie(p, baseGenomica, inputs, stdout=None):
 def htSeq_count(saida, gtf, stdout=None):
     return 'htseq-count --stranded reverse --type=exon --idattr=gene_id --mode=union  {0} {1}'.format(saida, gtf)
 
+# Cleaning head lines of counts files obtained with htseq-count (This activity is no longer necessary)
+# @bahs_app
+# def grep(file, stdout):
+#     return 'grep -vwE "processed" {} > {}'.format(file, stdout)
+
 @bash_app
 def DEseq(dseq2, saida, stdout=None):
     return '{0} {1}'.format(dseq2, saida)
@@ -22,8 +27,9 @@ def DEseq(dseq2, saida, stdout=None):
 # Parâmetros bowtie2
 base_bowtie, inputs_bowtie, saida = sys.argv[1], sys.argv[2], sys.argv[3]
 
-p = Path(inputs_bowtie)
-fasta = list(p.glob('*.gz'))
+p = Path(inputs_bowtie).parent
+pattern = str(Path(inputs_bowtie).name)+'*'
+fasta = list(p.glob(pattern))
 output = Path(saida)
 
 for i in fasta:
@@ -41,7 +47,7 @@ sam = list(output.glob('*.sam'))
 
 for l in sam:
     prefix = Path(l).stem
-    saida_htseq = os.path.join(output, prefix+'.counts')
+    saida_htseq = os.path.join(output, prefix)
     exc = htSeq_count(l, Path(gtf).resolve(), stdout=saida_htseq)
     saida.append(exc)
 
@@ -50,7 +56,14 @@ wait_results = [i.result() for i in saida]
 # Parâmetros DEseq
 exc_dseq2= sys.argv[5]
 
-count = list(output.glob('*.counts'))
+# counts = list(output.glob('*.counts'))
+# lista_exe = []
+# for i in counts:
+#     prefix = Path(i).stem
+#     cleanFile = os.path.join(output, prefix + '.clean.counts')
+#     exe_grep = grep(i, stdout = cleanFile)
+#     lista_exe.append(exe_grep)
+# grep_results = [j.results for j in lista_exe]
 
 saida_DEseq = os.path.join(output, 'teste.deseq')
 teste = DEseq(Path(exc_dseq2).resolve(), output, stdout=saida_DEseq)
