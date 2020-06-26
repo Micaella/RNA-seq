@@ -15,7 +15,7 @@ def bowtie(p, baseGenomica, inputs, stdout=None):
 def htSeq_count(saida, gtf, stdout=None):
     return 'htseq-count --stranded reverse --type=exon --idattr=gene_id --mode=union  {0} {1}'.format(saida, gtf)
 
-# Cleaning head lines of counts files obtained with htseq-count (This activity is no longer necessary)
+# Cleaning head lines of counts files obtained with htseq-count
 # @bahs_app
 # def grep(file, stdout):
 #     return 'grep -vwE "processed" {} > {}'.format(file, stdout)
@@ -27,8 +27,9 @@ def DEseq(dseq2, saida, stdout=None):
 # Parâmetros bowtie2
 base_bowtie, inputs_bowtie, saida = sys.argv[1], sys.argv[2], sys.argv[3]
 
-p = Path(inputs_bowtie)
-fasta = list(p.glob('*.gz'))
+p = Path(inputs_bowtie).parent
+pattern = str(Path(inputs_bowtie).name)+'*'
+fasta = list(p.glob(pattern))
 output = Path(saida)
 
 for i in fasta:
