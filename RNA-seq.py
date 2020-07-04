@@ -2,9 +2,9 @@
 import sys
 import os
 from parsl import load, python_app, bash_app
-from parsl.configs.local_threads import config
-from parsl.data_provider.files import File
+from configs.config import config
 from pathlib import Path
+
 load(config)
 
 @bash_app
