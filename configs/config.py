@@ -1,3 +1,6 @@
+from parsl.config import Config
+from parsl.executors.threads import ThreadPoolExecutor
+
 config = Config(
 	app_cache=True,
 	checkpoint_files=None,
@@ -8,7 +11,7 @@ config = Config(
 		ThreadPoolExecutor(
 			label='THREADS',
 			managed=True,
-			max_threads=6,
+			max_threads=24,
 			storage_access=None,
 			thread_name_prefix='',
 			working_dir=None
