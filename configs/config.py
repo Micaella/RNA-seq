@@ -11,7 +11,7 @@ config = Config(
 		ThreadPoolExecutor(
 			label='THREADS',
 			managed=True,
-			max_threads=24,
+			max_threads=12,
 			storage_access=None,
 			thread_name_prefix='',
 			working_dir=None
