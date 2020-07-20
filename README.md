@@ -9,12 +9,12 @@ In order to use RNA-seq Workflow the following tools must be available:
 
 You can install Bowtie2 by running:
 
-'''
+```sh
 bowtie2-2.3.5.1-linux-x86_64.zip
-'''
+```
 
 Or
 
-'''
+```sh
 sudo yum install bowtie2-2.3.5-linux-x86_64
-'''
+```
