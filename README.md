@@ -30,7 +30,7 @@ pip install HTSeq
 HTSeq uses [NumPy](https://numpy.org/), [Pysam](https://github.com/pysam-developers/pysam) and [matplotlib](https://matplotlib.org/). Be sure this tools are installed.
 
 - [R](https://www.r-project.org/)
-
+/mm
 To use [DESEq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) script make sure R language is also installed. You can install it by running:
 
 ```sh
@@ -51,12 +51,21 @@ To use Parsl, you need Python 3.5 or above. You also need Python to use HTSeq, s
 
 ## Workflow invocation
 
-First of all, make a Comma Separated Values (CSV) file. So, onto the first line type: ``sampleName,fileName,condition``. **Remember, there must be no spaces between items**. You can use the table.csv file in this repository as an example.
+First of all, make a Comma Separated Values (CSV) file. So, onto the first line type: ``sampleName,fileName,condition``. **Remember, there must be no spaces between items**. You can use the file *"table.csv"* in this repository as an example. Your CSV file will be like this:
 
-| sampleName | fileName | condition |
-|---|---|---|
-|   |   |   |
-|   |   |   |
-|   |   |   |
+|    sampleName    |     fileName     |condition|
+|------------------|------------------|---------|
+| tissue control 1 | SRR5445794.fastq | control |
+| tissue control 2 | SRR5445795.fastq | control |
+| tissue control 3 | SRR5445796.fastq | control |
+| tissue wntup 1   | SRR5445797.fastq | wntup   |
+| tissue wntup 2   | SRR5445798.fastq | wntup   |
+| tissue wntup 3   | SRR5445799.fastq | wntup   |
 
-On this first version the workflow search, on the input files' directory, for a pattern on the prefix in the files' name. So, for running this workflow you need pass this pattern.
+The list of command line arguments passed to Python script, beyond the script name, must be: the indexed genome, read fastaq file, directory's name where the output files must be placed,  GTF file and lastly the DESeq script. 
+
+```
+python3 rna-seq.py ../mm9/mm9 ../inputs/SRR ../outputs ../Mus_musculus.NCBIM37.67.gtf ../DESeq.R
+```
+
+On this first version the workflow search, on the input files' directory, for a pattern on the prefix in the files' name. So, for running this workflow you need pass this pattern. In this table, as you can see, the pattern is ``"SRR"``.
