@@ -27,7 +27,7 @@ HTSeq is a native Python library that folows conventions of many Python packages
 pip install HTSeq
 ```
 
-HTSeq uses NumPy, Pysam and matplotlib. Be sure this tools are installed.
+HTSeq uses [NumPy](https://numpy.org/), [Pysam](https://github.com/pysam-developers/pysam) and [matplotlib](https://matplotlib.org/). Be sure this tools are installed.
 
 - [R](https://www.r-project.org/)
 
