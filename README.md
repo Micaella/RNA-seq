@@ -9,23 +9,17 @@ In order to use RNA-seq Workflow the following tools must be available:
 
 You can install Bowtie2 by running:
 
-```sh
-bowtie2-2.3.5.1-linux-x86_64.zip
-```
+> bowtie2-2.3.5.1-linux-x86_64.zip
 
 Or
 
-```sh
-sudo yum install bowtie2-2.3.5-linux-x86_64
-```
+> sudo yum install bowtie2-2.3.5-linux-x86_64
 
 - [HTSeq](https://htseq.readthedocs.io/en/master/)
 
 HTSeq is a native Python library that folows conventions of many Python packages. You can install it by running:
 
-```sh
-pip install HTSeq
-```
+> pip install HTSeq
 
 HTSeq uses [NumPy](https://numpy.org/), [Pysam](https://github.com/pysam-developers/pysam) and [matplotlib](https://matplotlib.org/). Be sure this tools are installed.
 
@@ -33,9 +27,8 @@ HTSeq uses [NumPy](https://numpy.org/), [Pysam](https://github.com/pysam-develop
 /mm
 To use [DESEq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) script make sure R language is also installed. You can install it by running:
 
-```sh
-sudo apt install r-base
-```
+
+> sudo apt install r-base
 
 - [Parsl - Parallel Scripting Library](https://parsl.readthedocs.io/en/stable/index.html)
 
@@ -43,7 +36,6 @@ The recommended way to install Parsl is the suggest approach from Parsl's documa
 
 
 > python3 -m pip install parsl
-
 
 - [Python (version >= 3.5)](https://www.python.org/)
 
@@ -53,7 +45,7 @@ To use Parsl, you need Python 3.5 or above. You also need Python to use HTSeq, s
 
 First of all, make a Comma Separated Values (CSV) file. So, onto the first line type: ``sampleName,fileName,condition``. **Remember, there must be no spaces between items**. You can use the file *"table.csv"* in this repository as an example. Your CSV file will be like this:
 
-<p align="center">
+<div align="center">
 
 |    sampleName    |     fileName     |condition|
 |------------------|------------------|---------|
@@ -63,7 +55,7 @@ First of all, make a Comma Separated Values (CSV) file. So, onto the first line 
 | tissue wntup 1   | SRR5445797.fastq | wntup   |
 | tissue wntup 2   | SRR5445798.fastq | wntup   |
 | tissue wntup 3   | SRR5445799.fastq | wntup   |
-</p>
+</div>
 
 The list of command line arguments passed to Python script, beyond the script's name, must be: the indexed genome, read fastaq file, directory's name where the output files must be placed,  GTF file and lastly the DESeq script. Make sure all the files necessary to run the workflow are in the same directory and the fastaq files in a dedicated folder, as a input directory. The command line will be like this:
 
