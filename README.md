@@ -1,4 +1,4 @@
-# Scientific Workflow RNA-seq
+# RNA-seq Scientific Workflow
 Workflow for RNA sequencing using the Parallel Scripting Library - Parsl.
 
 ## Requirements
@@ -51,8 +51,4 @@ To use Parsl, you need Python 3.5 or above. You also need Python to use HTSeq, s
 
 ## Workflow invocation
 
-First of all, make a Comma Separated Values (CSV) file. So, onto the first line type: 
-```
-sampleName,fileName,condition 
-```
-**Remember, there must be no spaces between items**.
+First of all, make a Comma Separated Values (CSV) file. So, onto the first line type: ``sampleName,fileName,condition ``. **Remember, there must be no spaces between items**.
