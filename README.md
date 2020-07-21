@@ -45,17 +45,14 @@ To use Parsl, you need Python 3.5 or above. You also need Python to use HTSeq, s
 
 First of all, make a Comma Separated Values (CSV) file. So, onto the first line type: ``sampleName,fileName,condition``. **Remember, there must be no spaces between items**. You can use the file *"table.csv"* in this repository as an example. Your CSV file will be like this:
 
-![](https://github.com/lucruzz/RNA-seq/blob/master/table.csv)
-
-|    sampleName    |     fileName     |condition|
-|------------------|------------------|---------|
-| tissue control 1 | SRR5445794.fastq | control |
-| tissue control 2 | SRR5445795.fastq | control |
-| tissue control 3 | SRR5445796.fastq | control |
-| tissue wntup 1   | SRR5445797.fastq | wntup   |
-| tissue wntup 2   | SRR5445798.fastq | wntup   |
-| tissue wntup 3   | SRR5445799.fastq | wntup   |
-
+   |    sampleName    |     fileName     |condition|
+   |------------------|------------------|---------|
+   | tissue control 1 | SRR5445794.fastq | control |
+   | tissue control 2 | SRR5445795.fastq | control |
+   | tissue control 3 | SRR5445796.fastq | control |
+   | tissue wntup 1   | SRR5445797.fastq | wntup   |
+   | tissue wntup 2   | SRR5445798.fastq | wntup   |
+   | tissue wntup 3   | SRR5445799.fastq | wntup   |
 
 The list of command line arguments passed to Python script, beyond the script's name, must be: the indexed genome, read fastaq file, directory's name where the output files must be placed,  GTF file and lastly the DESeq script. Make sure all the files necessary to run the workflow are in the same directory and the fastaq files in a dedicated folder, as a input directory. The command line will be like this:
 
