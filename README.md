@@ -51,4 +51,12 @@ To use Parsl, you need Python 3.5 or above. You also need Python to use HTSeq, s
 
 ## Workflow invocation
 
-First of all, make a Comma Separated Values (CSV) file. So, onto the first line type: ``sampleName,fileName,condition ``. **Remember, there must be no spaces between items**.
+First of all, make a Comma Separated Values (CSV) file. So, onto the first line type: ``sampleName,fileName,condition``. **Remember, there must be no spaces between items**. You can use the table.csv file in this repository as an example.
+
+| sampleName | fileName | condition |
+|---|---|---|
+|   |   |   |
+|   |   |   |
+|   |   |   |
+
+On this first version the workflow search, on the input files' directory, for a pattern on the prefix in the files' name. So, for running this workflow you need pass this pattern.
