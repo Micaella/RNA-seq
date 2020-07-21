@@ -48,3 +48,11 @@ python3 -m pip install parsl
 - [Python (version >= 3.5)](https://www.python.org/)
 
 To use Parsl, you need Python 3.5 or above. You also need Python to use HTSeq, so you should load only one Python version.
+
+## Workflow invocation
+
+First of all, make a Comma Separated Values (CSV) file. So, onto the first line type: 
+```
+sampleName,fileName,condition 
+```
+**Remember, there must be no spaces between items**.
